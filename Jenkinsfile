@@ -7,8 +7,6 @@ pipeline {
                 sh "git clone https://github.com/SwetaRath/hello-world-war.git"
             }
         }
-    }
-stages {
         stage('Build') {
             steps {
                 dir('hello-world-war')
@@ -17,9 +15,7 @@ stages {
            }
 }
 }
-}
-stages {
-        stage('Deploy') {
+         stage('Deploy') {
             steps {
            echo "Deploy the application"
                 sh  "mvn clean package"
