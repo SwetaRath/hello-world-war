@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Java' }
+    agent none
 
     stages {
 
