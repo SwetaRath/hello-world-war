@@ -2,7 +2,7 @@ pipeline {
     agent { label 'Java' }
     stages {
         stage ( 'hello-world-war' ) {
-            parralel {
+            parallel {
         stage('Checkout') {
             steps {
                 sh  "rm -rf hello-world-war"
