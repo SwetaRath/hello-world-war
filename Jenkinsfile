@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent { label 'Java' }
     stages {
         stage ( 'hello-world-war' ) {
             parralel {
