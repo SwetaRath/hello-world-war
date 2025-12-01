@@ -1,12 +1,12 @@
 pipeline {
-    agent any
-
-    stages {
+    agent none
+   stages {
 
         stage('hello-world-war') {
             parallel {
 
                 stage('Checkout') {
+                    agent { label ' Java ' }
                     steps {
                         sh "rm -rf hello-world-war"
                         sh "git clone https://github.com/SwetaRath/hello-world-war.git"
@@ -14,18 +14,19 @@ pipeline {
                 }
 
                 stage('Build') {
+                    agent { label ' Java ' }
                     steps {
-                        dir('hello-world-war') {
+                       
                             sh "mvn clean package"
-                        }
+                        
                     }
                 }
 
                 stage('Deploy') {
+                    agent { label ' Java ' }
                     steps {
                         echo "Deploy the application"
-                        dir('hello-world-war') {
-                            sh "mvn clean package"
+                            sh 'sudo cp /home/slav1/workspace/HelloWorldWar_Pipeline/target/hello-world-war-1.0.0.war /home/apache-tomcat-10.1.49/webapps '
                         }
                     }
                 }
@@ -34,4 +35,4 @@ pipeline {
         }
 
     }
-}
+
