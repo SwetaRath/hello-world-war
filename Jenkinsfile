@@ -11,8 +11,8 @@ pipeline {
             // agent { label 'java' }
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'cce2c98e-78c8-4883-b00b-c393c23f7713',
-                    usernameVariable: 'slave1',
+                    credentialsId: 'c9a17574-89f2-4a43-8c65-205c91c2ae8f',
+                    usernameVariable: 'admin',
                     passwordVariable: 'admin_password'
                 ),
                     sshUserPrivateKey(
