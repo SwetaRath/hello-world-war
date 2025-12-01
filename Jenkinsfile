@@ -26,7 +26,7 @@ pipeline {
                     agent { label ' Java ' }
                     steps {
                         echo "Deploy the application"
-                            sh ' scp /home/slave1/workspace/hello_world_war/target/hello-world-war-1.0.1.war /opt/apache-tomcat-10.1.49/webapps '
+                            sh ' cp /home/slave1/workspace/hello_world_war/target/hello-world-war-1.0.1.war /opt/apache-tomcat-10.1.49/webapps '
                         }
                     }
                 }
