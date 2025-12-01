@@ -12,7 +12,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'cce2c98e-78c8-4883-b00b-c393c23f7713',
-                    usernameVariable: 'admin',
+                    usernameVariable: 'slave1',
                     passwordVariable: 'admin_password'
                 ),
                     sshUserPrivateKey(
