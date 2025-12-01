@@ -21,6 +21,12 @@ pipeline {
                         
                     }
                 }
+                stage('Check User') {
+                    agent { label ' Java ' }
+    steps {
+        sh 'whoami'
+    }
+}
 
                 stage('Deploy') {
                     agent { label ' Java ' }
