@@ -22,7 +22,7 @@ pipeline {
                         usernameVariable: 'SSH_USER'
                     )
                 ]) {
-                    sh "rm -rf hello_world_war"
+                    sh "rm -rf hello-world-war"
                     sh "git clone https://github.com/SwetaRath/hello-world-war.git"
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-                sh "sudo cp /home/slave1/workspace/hello_world_war/target/hello_world_war_1.0.1.war /opt/apache-tomcat-10.1.49/webapps/"
+                sh "sudo cp /home/slave1/workspace/hello-world-war/target/hello-world-war-1.0.1.war /opt/apache-tomcat-10.1.49/webapps/"
             }
         }
     }
